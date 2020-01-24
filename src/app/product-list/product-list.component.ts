@@ -8,6 +8,7 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  message:string = "hello, Salut";
   products = products;
 
   share() {
