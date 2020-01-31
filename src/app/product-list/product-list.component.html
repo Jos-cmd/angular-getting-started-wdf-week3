@@ -5,8 +5,8 @@
 {{ message }}
 
 </p>
-
-<div *ngFor="let product of products; index as productId">
+<!-- //looping through array called shopProducts and storing in variable  -->
+<div *ngFor="let product of shopProducts; index as productId">
 
 <h3>
   <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
