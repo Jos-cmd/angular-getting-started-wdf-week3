@@ -16,7 +16,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RouterModule.forRoot([
       //This is the default route 
       { path: '', component: ProductListComponent },
-      { path: 'products/:productid' , component: ProductDetailsComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
     ])
   ],
   declarations: [
