@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { products } from '../products';
+//import cart service
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -15,10 +17,20 @@ export class ProductDetailsComponent implements OnInit {
   public product:any;
 
 
+//Define the addToCart() method...Receives the current product...Uses the cart service's #addToCart() method to add the product to the cart...Displays a message
+  addToCart(product) {
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(product);
+  }
+
+
+
 // ask for it and injected into the contructor, passed in as activatedRoute object
 //injected activatedRoute object called route and declaring it as private or public and can use it later on in functions 
   constructor(
       private route: ActivatedRoute,
+      //inject the cart service
+      private cartService: CartService
   ) { }
 
   //funtion that initializes after constructor and just before display
