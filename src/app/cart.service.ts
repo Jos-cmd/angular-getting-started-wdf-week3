@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+//Import HttpClient from the @angular/common/http package.
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
 
@@ -25,7 +27,13 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-
-  constructor() {}
+//define a new getShippingPrices() method that uses the HttpClient#get() method to retrieve the shipping data 
+  getShippingPrices() {
+    return this.http.get('/assets/shipping.json');
+  }
+//Inject HttpClient into the constructor of the CartService component class:
+  constructor(
+    private http: HttpClient
+  ) {}
 
 }
